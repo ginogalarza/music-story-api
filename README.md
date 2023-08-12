@@ -1,66 +1,65 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# API de Información de Bandas Musicales
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+La **API de Información de Bandas Musicales** es una aplicación desarrollada en Laravel que te permite gestionar y acceder a detalles importantes sobre diferentes bandas o grupos musicales. Con esta API, puedes obtener información sobre la discografía de una banda, su historia, miembros actuales y más.
 
-## About Laravel
+## Características
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Información Detallada:** Accede a detalles completos sobre bandas o grupos musicales, como discografía, historia y miembros.
+- **Interfaz Intuitiva:** La API ofrece puntos finales (endpoints) bien definidos para facilitar el acceso a la información.
+- **Fácil Integración:** Puedes integrar fácilmente esta API en aplicaciones web y móviles.
+- **Base de Datos Eficiente:** Utiliza una base de datos eficiente para almacenar y gestionar la información de las bandas.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requisitos del Sistema
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- PHP >= 8.1
+- Composer
+- MySQL u otro sistema de gestión de bases de datos compatible
 
-## Learning Laravel
+## Instalación
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+1. **Clonar el Repositorio:**
+   
+   Clona este repositorio en tu máquina local:
+   ```bash
+   git clone https://github.com/ginogalarzac/music-story-api
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+2. **Navegar a la Carpeta del Proyecto:**\
+    ```bash
+    cd music-story-api
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. **Instala las dependencias utilizando Composer:**
+    ```bash
+    composer install
 
-## Laravel Sponsors
+4. **Configurar la Base de Datos:**
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+    Crea un archivo .env y configura la conexión a la base de datos. Puedes copiar el contenido de .env.example y ajustar los valores según tu entorno.
 
-### Premium Partners
+5. **Generar Clave de Aplicación:**
+    ```bash
+    php artisan key:generate
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+6. **Ejecutar Migraciones:**
 
-## Contributing
+    Ejecuta las migraciones para crear las tablas de la base de datos:
+    ```bash
+    php artisan migrate
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+7. Iniciar el Servidor de Desarrollo:
 
-## Code of Conduct
+    Lanza el servidor de desarrollo:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+    ```bash
+    php artisan serve
 
-## Security Vulnerabilities
+La API estará disponible en http://localhost:8000.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Contribución
 
-## License
+Si deseas contribuir a este proyecto, sigue los siguientes pasos:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+1. Realiza un fork del repositorio.
+2. Crea una rama para tu función o corrección: `git checkout -b nueva-funcionalidad`
+3. Realiza los cambios y realiza commits: `git commit -m "Añadir nueva funcionalidad"`
+4. Envía tus cambios a tu repositorio fork: `git push origin nueva-funcionalidad`
+5. Crea un Pull Request en el repositorio original.
