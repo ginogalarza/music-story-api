@@ -12,6 +12,8 @@ class Artist extends Model
 
     public function musicalGenres(): BelongsToMany
     {
-        return $this->belongsToMany(MusicalGenre::class);
+        return $this->belongsToMany(MusicalGenre::class)
+            ->using(ArtistMusicalGenre::class)
+            ->withTimestamps();
     }
 }
