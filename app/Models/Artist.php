@@ -16,4 +16,12 @@ class Artist extends Model
             ->using(ArtistMusicalGenre::class)
             ->withTimestamps();
     }
+
+    public function socialNetworks()
+    {
+        return $this->belongsToMany(SocialNetwork::class)
+            ->using(ArtistSocialNetwork::class)
+            ->withTimestamps()
+            ->withPivot('url');
+    }
 }

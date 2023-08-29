@@ -9,7 +9,11 @@ class SocialNetwork extends Model
 {
     use HasFactory;
 
-    protected $attributes = [
-        'name' => 'Facebook'
-    ];
+    public function artists()
+    {
+        return $this->belongsToMany(Artist::class)
+            ->using(ArtistSocialNetwork::class)
+            ->withTimestamps()
+            ->withPivot('url');
+    } 
 }
