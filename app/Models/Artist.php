@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Artist extends Model
 {
@@ -17,11 +18,16 @@ class Artist extends Model
             ->withTimestamps();
     }
 
-    public function socialNetworks()
+    public function socialNetworks(): BelongsToMany
     {
         return $this->belongsToMany(SocialNetwork::class)
             ->using(ArtistSocialNetwork::class)
             ->withTimestamps()
             ->withPivot('url');
+    }
+
+    public function members(): HasMany
+    {
+        return $this->hasMany(Member::class);
     }
 }
