@@ -21,10 +21,6 @@ return new class extends Migration
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->restrictOnDelete();
-            $table->foreignId('album_id')
-                ->constrained()
-                ->cascadeOnUpdate()
-                ->restrictOnDelete();
             $table->timestamps();
         });
     }
