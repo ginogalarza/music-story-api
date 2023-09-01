@@ -40,4 +40,9 @@ class Artist extends Model
     {
         return $this->hasMany(Concert::class);
     }
+
+    public function tours(): HasMany
+    {
+        return $this->hasMany(Tour::class);
+    }
 }
