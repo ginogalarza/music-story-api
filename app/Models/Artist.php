@@ -45,4 +45,11 @@ class Artist extends Model
     {
         return $this->hasMany(Tour::class);
     }
+
+    public function songs(): BelongsToMany
+    {
+        return $this->belongsToMany(Song::class)
+            ->using(ArtistSong::class)
+            ->withTimestamps();
+    }
 }
