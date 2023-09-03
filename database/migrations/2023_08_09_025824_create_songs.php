@@ -18,6 +18,10 @@ return new class extends Migration
             $table->time('duration');
             $table->text('letter');
             $table->date('release_date')->nullable();
+            $table->foreignId('artist_id')
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->restrictOnDelete();
             $table->timestamps();
         });
     }
