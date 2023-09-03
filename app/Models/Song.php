@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Song extends Model
@@ -17,11 +18,9 @@ class Song extends Model
             ->using(ConcertSong::class);
     }
 
-    public function artists(): BelongsToMany
+    public function artist(): BelongsTo
     {
-        return $this->belongsToMany(Artist::class)
-            ->withTimestamps()
-            ->using(ArtistSong::class);
+        return $this->belongsTo(Artist::class);
     }
 
     public function albums(): BelongsToMany
